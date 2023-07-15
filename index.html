@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Alien Abduction Order Form</title>
+	<link href="css/forms.css" rel="stylesheet">
+   
+</head>
+<body>
+	<div class="wrapper">
+		<section>
+            <!-- With the help of action,hidden and method(how the information in the form is transmitted to server. ) we make our form to do something that is 
+            whatever we type into the form we are gonna dump it into email. and this 
+            whole processing happen on server -->
+            <h1>Alien Abduction Order Form</h1>
+			<p>Fill out the form below to place an order for an alien abduction by one of our fine UFOs.</p>
+            <form action="https://e3vwdl4bpd.execute-api.us-west-2.amazonaws.com/default/API2SES" method="POST">
+                 <!-- hidden tag  -->
+                <input type="hidden" 
+                name="send_to" 
+                value="prashantbaghel410@gmail.com">
+			<!-- The <fieldset> tag is used to group related elements in a form. 
+            The <fieldset> tag draws a box around the related elements.  -->
+            <fieldset>
+                <!-- The <legend> HTML element represents a caption for the 
+                content of its parent <fieldset>.     -->
+                <legend>Your contact information</legend>
+                <label for="name">Your name</label>
+                    <input type="text" id="name" name="name" >
+                    <!--  id is use in this case with label tag and name portion is associated with
+                    processing script .when we click on submit button then all details
+                    send to server then processing script on the server needs same name field on server in order to do whatever it needs
+                    to do. -->
+                <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Don't forget the area code!" >
+
+                <label for="email">Email address:</label>
+                    <input type="email" id="email" name="email">
+            </fieldset>
+
+            <fieldset>
+			<legend>About your abduction</legend>
+			<label for="date">Requested Date</label>
+                <input type="date" id="date" name="date" >
+
+            <label for="qty">How many people would you like abducted?</label>
+                <input type="number" id="qty" name="qty" min="1" max="10">
+            <p>What type of UFO do you prefer?</p>
+
+				<!-- <ul>
+					<li>Classic oval UFO</li>
+					<li>Star Wars-style Imperial cruiser</li>
+					<li>Battlestar Galactica-style Viper</li>
+					<li>Borg-style cube</li>
+				</ul>  -->
+                <!-- Here we apply label button in different way. -->
+                <label >
+                <input type="radio" id="classic" name="ufotype" value="classic">Classic oval UFO
+                </label>
+                <label for="dance">
+                <input type="radio" id="dance" name="ufotype" value="starwars" checked>Star Wars-style Imperial cruiser
+                </label>
+                <label>
+                <input type="radio" id="Battlestar" name="ufotype" value="galactica" >Battlestar Galactica-style Viper
+                </label>
+                <label>
+                <input type="radio" id="Borg" name="ufotype" value="startrek">Borg-style cube
+                </label>
+			<label for="abtype">What type of abduction experience do you want?</label>
+                <!-- Through selected keyword that option is selected by default. -->
+				<select id="abtype" name="abtype">
+					<option selected >Select One.....</option>
+					<option value="tour">Tour of the solar system</option>
+					<option value="dinner">Alien dinner and discussion</option>
+					<option value="dance">Alien dance lessons</option>
+					<option value="whales">Whale watching</option>
+				</select>
+			<label for="comments">Special requests:</label>
+            <textarea name="comments" id="comments" cols="20" rows="5" placeholder="Enter your ideas here"></textarea>
+			<label>	
+            <input type="checkbox" id="subscribe" name="subscribe" value="subscribe" checked> Add me to your email list
+            </label>
+            </fieldset>
+            <!-- button has no id,no value,no name. -->
+            <button type="submit">Order your me to your email list</button>
+            </form>			
+		</section>
+		<aside>
+			<h3>Our Location</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3428.9439073891936!2d76.75454037523055!3d30.74807707457688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390febffe47a7419%3A0x267dc179dae933b6!2sUIET%20Punjab%20University!5e0!3m2!1sen!2sin!4v1689370867705!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			<address>
+				Frontend Masters &middot;
+				60 South 6th Street &middot;
+				Suite 3625 &middot;
+				Minneapolis, MN 55402
+			</address>
+		</aside>
+	</div>
+    <script src="js/forms.js"></script>
+</body>
+</html>
